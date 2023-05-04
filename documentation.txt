@@ -1,0 +1,59 @@
+[!] Pastikan Install di VPS
+[!] Tidak support Hosting atau vercel
+
+1. Pastikan punya vps debian or ubuntu, dan tau basic2 tentang linux, dan paham web server di linux
+
+[!] Pastikan Sudah menginstall Node JS dan NPM di vps. Tutorial? google
+
+2. Install Redis di vps bisa ikuti cara dibawah, atau cari sendiri di google
+    - apt install redis-server
+    - nano /etc/redis/redis.conf
+        - cari tulisan "supervised no"
+        - ganti menjadi "supervised systemd"
+        - save
+    - systemctl restart redis.service
+    - systemctl status redis
+
+3. Silahkan upload file cek id game yang ini ke vps
+    - bisa menggunakan sftp/ upload dulu ke github/upload kemana aja terserah lu. terus download pake wget
+
+4. Install zip unzip
+    - apt install zip unzip -y
+
+5. buat dir
+    - mkdir cek-game
+
+6. unzip filenya // Bisa ikutin cara ini atau terserah lu mau gimana
+    - unzip cek-id-game-vps-only.zip -d cek-game && cd cek-game  
+
+    [!] Note
+    - Kalian Harus Mengaktifkan Game dari midasbuy di file idgame.config.js
+    - Edit FIle tersebut, set ke value ke true jika ingin mengaktifkan game
+    - Kalau ga lu enable gaada yg aktif game nya, karena defaultnya false
+    
+7. Jalan kan perintah berikut
+    - npm install
+    - npx playwright install-deps
+    atau kalau gabisa 
+
+    - apt-get install -y gstreamer1.0-libav libnss3-tools libatk-bridge2.0-0 libcups2-dev libxkbcommon-x11-0 libxcomposite-dev libxrandr2 libgbm-dev libgtk-3-0
+
+    - node index.js
+
+8. Lalu test dengan membuka browser dengan url: IPVPS:3000
+
+9. Untuk menghubungkan domain, silahkan cari tutorial sendiri di google
+    Contoh Keyword
+    "Konfigurasi virtual host apache di vps debian or ubuntu"
+    "Cara menghubungkan domain ke vps, apache virtual host"
+    "Menghubungkan nodejs dengan apache"
+    "Reverse Proxy Apache Nodejs"
+    "Menjalankan Node js dengan pm2 / forever"
+
+9. Untuk Mengecek Dokumentasi mengenai list game dan endpointnya, silahkan akses alamat webmu
+
+
+
+[!] Note
+
+Untuk tanya tanya dan jasa install hubungi wa.me/+6287719167254 [Not Free]
